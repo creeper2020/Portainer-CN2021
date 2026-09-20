@@ -1,0 +1,12 @@
+SPDX-License-Identifier: GPL-2.0-only
+
+The Chinese localization files in this archived repository are distributed
+under the GNU General Public License, version 2 only, as stated by their source.
+
+You may obtain a copy of the complete license text at:
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+
+Portainer, fonts, images, JavaScript dependencies, and other third-party assets
+remain subject to their respective original copyright and license terms. This
+notice does not relicense third-party material where the repository does not
+hold the necessary rights.

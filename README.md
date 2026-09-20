@@ -1,13 +1,33 @@
-# Portainer-CN2021-IMNKS.COM
+# Portainer 1.24.2 中文界面文件
 
-本Portainer界面汉化文件来源于CecOS CaaS容器云平台，版本:2.21.0：开源GPL 2.0协议
+> [!IMPORTANT]
+> 本仓库已经归档，仅适用于旧版 Portainer 1.24.2，不支持当前的 Portainer CE。项目不再维护，也不会提供安全更新。
 
-本站修改，测试Portainer 1.24.2使用OK，不支持Portainer CE，老、旧、弱、arm等机子建议用这个
+本仓库保存 Portainer 1.24.2 的中文化 Web 静态资源。中文界面文件来源于 CecOS CaaS 容器云平台，并针对 Portainer 1.24.2 做了适配。
 
-1、下载汉化文件，解压出public文件夹 2、举例把文件夹传输至系统root目录（自行修改） 3、然后按需执行以下命令
+## 使用方法
 
-## docker run
+将仓库内容作为 Portainer 的 `/public` 目录挂载。以下命令仅用于兼容旧环境：
 
+```bash
 docker volume create portainer_data
 
-docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data -v /root/public:/public portainer/portainer:latest
+docker run -d \
+  -p 9000:9000 \
+  --name portainer \
+  --restart always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
+  -v /root/public:/public \
+  portainer/portainer:1.24.2
+```
+
+不要使用 `portainer/portainer:latest`，否则可能拉取与这些静态资源不兼容的版本。
+
+## 安全提示
+
+Portainer 1.24.2 已经过时，不建议直接暴露到互联网。继续使用时应限制管理端口的访问来源，并优先规划迁移到仍受支持的版本。
+
+## 许可证
+
+中文化文件按其来源声明采用 GNU General Public License v2.0。Portainer 本体、字体、图片及其他第三方资源仍分别遵循各自原有许可证，详情见 [LICENSE](LICENSE)。
